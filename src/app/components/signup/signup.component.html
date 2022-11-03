@@ -1,0 +1,36 @@
+<app-header></app-header>
+<div class="container">
+  <h2>Register a new Trainer</h2>
+   <form [formGroup]="signupForm" (ngSubmit)="onSubmitSignup()">
+    <input
+      type="text"
+      class="input-text"
+      placeholder="Username"
+      formControlName="username"
+    />
+    <div class="invalid-message"  *ngIf="signupForm.get('username')?.touched && signupForm.get('username')?.invalid">{{invalidUsernameMessage()}}</div>
+    <input
+      type="password"
+      class="input-text"
+      placeholder="Password"
+      formControlName="password"
+    />
+    <div class="invalid-message" *ngIf="signupForm.get('password')?.touched && signupForm.get('password')?.invalid">{{invalidPasswordMessage()}}</div>
+    <input
+      type="password"
+      class="input-text"
+      placeholder="Repeat password"
+      formControlName="repeatPassword"
+    />
+    <div class="invalid-message"
+    *ngIf="(signupForm.get('repeatPassword')?.touched && signupForm.get('repeatPassword')?.invalid) ||
+    (signupForm.get('repeatPassword')?.touched &&
+     (signupForm.get('password') !== signupForm.get('repeatPassword')))">{{passwordMismatchMessage()}}</div>
+
+    <button type="submit" [disabled]="signupForm.invalid" class="button-submit">Submit</button>
+    <p>Already have a member?
+      <a routerLink="/login">Login now</a>
+    </p>
+  </form>
+</div>
+

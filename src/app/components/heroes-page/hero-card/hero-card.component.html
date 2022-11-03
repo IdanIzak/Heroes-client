@@ -1,0 +1,28 @@
+<div class="container">
+  <div  #cardContainer  *ngFor="let hero of heroList"
+  [ngClass]="{'my-hero-choise':(allHeroesUrl && hero.isHeroCardClicked) || (myHeroesUrl && hero.isHeroTrained),
+   'hero-card__container': allHeroesUrl && !hero.isHeroCardClicked, 'my-hero-clicked': myHeroesUrl && !hero.isHeroCardClicked}"
+   (click)="hero.isHeroCardClicked = !hero.isHeroCardClicked">
+    <div class="hero-card">
+      <p><span class="bold">Name: </span>{{hero.name}}</p>
+      <p><span class="bold">Ability: </span>{{hero.ability}}</p>
+      <p><span class="bold">Id: </span>{{hero?.id}}</p>
+      <p><span class="bold">Starting power: </span>{{hero.startingPower}}</p>
+      <p><span class="bold">Current power: </span>
+        <span [ngClass]="hero.isHeroTrained ? 'hero-trained' : 'hero-not-trained'">{{hero.currentPower}}</span></p>
+      <p><span class="bold">Remaining trainings: </span>
+        <span [ngClass]="hero.isHeroTrained ? 'hero-trained' : 'hero-not-trained'">{{hero.remainingTrainings}}</span></p>
+      <p><span class="bold">Started training date: </span>{{hero.startedTrainingDate | date: 'dd/MMM/yyyy hh:mm a'}}</p>
+      <p><span class="bold">Suit colors: </span>{{hero.suitColors}}</p>
+    <button *ngIf="allHeroesUrl && hero.isHeroCardClicked" id="add-hero-button"
+      type="button"
+      (click)="onAddToMyHeroes(hero)"
+      >Add to my heroes</button>
+    <button *ngIf="myHeroesUrl && hero.remainingTrainings > 0" id="train-my-heroes"
+      type="button"
+      [disabled]="hero.remainingTrainings === 0"
+      (click)="onTrainHero(hero)"
+      >Train hero</button>
+    </div>
+  </div>
+</div>

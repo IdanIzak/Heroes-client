@@ -1,0 +1,49 @@
+:host {
+  position:fixed;
+  top:0;
+  left:0;
+  background-color: #3b5bfc;
+  color:white;
+}
+
+.header{
+  display: flex;
+  align-items: center;
+  width:100vw;
+  height: 4rem;
+
+  h1{
+    margin: 0 auto;
+  }
+
+  .navbar{
+    margin-right: 2rem;
+  }
+
+  .welcome-user{
+    display: inline-block;
+    margin-right: 3rem;
+    font-size: 1.5rem;
+  }
+
+  a{
+    padding: 1rem;
+    color:white;
+    text-decoration: none;
+    font-size: 1.5rem;
+
+    &active, &visited {
+      color:white;
+    }
+
+    &:hover{
+      background-color: rgb(217, 237, 243);
+      color: #3b5bfc;
+      cursor: pointer;
+    }
+  }
+}
+
+
+
+

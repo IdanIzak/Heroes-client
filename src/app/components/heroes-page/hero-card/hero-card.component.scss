@@ -1,0 +1,114 @@
+.container{
+  width:80vw;
+  margin: 2rem auto;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 1rem;
+
+  .hero-card__container{
+    width: 100%;
+    max-width: 20vw;
+    height:max-content;
+    border: 1px solid #3b5bfc;
+    padding: 1rem;
+    background-color: rgba(217, 237, 243, 0.5);
+    border-radius: 10px;
+
+    &:hover{
+      background-color: rgba(77, 235, 193, 0.50);
+      cursor: pointer;
+    }
+  }
+
+  .my-hero-choise{
+    width: 100%;
+    max-width: 20vw;
+    border: 1px solid #3b5bfc;
+    border-radius: 10px;
+    background-color: rgba(77, 235, 193, 0.70);
+    padding: 1rem;
+
+    &:hover{
+      cursor: pointer;
+    }
+
+    #train-my-heroes{
+      border: 3px solid rgb(77, 119, 235);
+      font-weight: 600;
+    }
+  }
+
+  .hero-trained{
+    color: rgb(204, 50, 50);
+    font-weight: 700;
+  }
+
+  .hero-not-trained{
+    color:black;
+    font-weight: 400;
+  }
+}
+
+.my-hero-clicked{
+  width: 100%;
+  max-width: 20vw;
+  height:max-content;
+  border: 1px solid #3b5bfc;
+  border-radius: 10px;
+  background-color: rgba(217, 237, 243, 0.5);
+  padding: 1rem;
+
+
+  &:hover{
+    background-color: rgba(77, 235, 193, 0.50);
+    cursor:auto;
+
+  #train-my-heroes{
+    border: 3px solid rgb(77, 119, 235);
+    font-weight: 600;
+  }
+}
+}
+
+#add-hero-button{
+  display:block;
+  margin: 0 auto;
+  font-size: 1.2rem;
+  color: white;
+  width: 80%;
+  max-width: 20vw;
+  background-color: #3b5bfc;
+  margin: 1rem;
+  padding: 1rem;
+  font-size: large;
+
+  &:hover{
+    cursor: pointer;
+  }
+}
+
+#train-my-heroes{
+  display:block;
+  margin: 1rem auto;
+  font-size: 2rem;
+  color: #3b5bfc;
+  background-color: white;
+
+  &:hover{
+    cursor: pointer;
+  }
+}
+
+.bold{
+  font-weight: 700;
+}
+
+.my-heroes-empty{
+  margin-left: 10vw;
+  color: rgb(204, 50, 50);
+  font-size: 1.2rem;
+  margin-bottom: 2rem;
+  margin-top: 6rem;
+}
+
+

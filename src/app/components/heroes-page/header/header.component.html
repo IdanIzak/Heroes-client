@@ -1,0 +1,16 @@
+<header class="header">
+  <a routerLink="/my-heroes">Home</a>
+  <a routerLink="/all-heroes">All heroes</a>
+  <h1>Heroes</h1>
+  <nav class="navbar">
+    <div *ngIf="!isUserLoggedIn(); else userConnected">
+      <a routerLink="/signup">Sign up</a>
+      <a routerLink="/login">Login</a>
+    </div>
+    <ng-template #userConnected>
+      <div class="welcome-user">Hello, {{username}}</div>
+      <a routerLink="/login" (click)="logout()">Logout</a>
+  </ng-template>
+  </nav>
+</header>
+

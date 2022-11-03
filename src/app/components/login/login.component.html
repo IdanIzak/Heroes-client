@@ -1,0 +1,27 @@
+<app-header></app-header>
+<div class="container">
+  <h2>Trainer login</h2>
+  <form [formGroup]="loginForm" (ngSubmit)="onSubmitLogin()">
+    <input
+      type="text"
+      class="input-text"
+      placeholder="Username"
+      formControlName="username"
+    />
+    <div class="invalid-message" *ngIf="this.loginForm.get('username')?.touched && this.loginForm.get('username')?.invalid">{{invalidUsernameMessage()}}</div>
+    <input
+      type="password"
+      class="input-text"
+      placeholder="Password"
+      formControlName="password"
+    />
+    <div class="invalid-message" *ngIf="this.loginForm.get('password')?.touched &&
+     this.loginForm.get('password')?.invalid">{{invalidPasswordMessage()}}</div>
+    <div class="invalid-message" *ngIf="loginFailed">Invalid username/password combination</div>
+
+    <button type="submit" [disabled]="loginForm.invalid" class="button-submit">Login</button>
+    <p>Doesn't have an account?
+      <a routerLink="/signup">Signup now</a>
+    </p>
+  </form>
+</div>

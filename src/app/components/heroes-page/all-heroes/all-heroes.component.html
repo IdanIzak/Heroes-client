@@ -1,0 +1,14 @@
+<app-header></app-header>
+<h2>Heroes list</h2>
+<p class="headline" *ngIf="allHeroes.length > 0">{{username}}, Welcome to our heroes company! Which heroes you would like to train?</p>
+<div class="all-heroes-empty" *ngIf="isAllHeroesEmpty">No heroes to display. Check the
+  <a routerLink="/my-heroes">
+    homepage
+  </a>
+   to view your heroes.
+</div>
+<div class="hero-added" *ngIf="isHeroAddedToMyHeroes">Hero {{heroChosenId}} is added to your heroes and can be trained!</div>
+<app-hero-card></app-hero-card>
+
+
+
